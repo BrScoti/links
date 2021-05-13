@@ -1,64 +1,130 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import Link from 'next/link'
+import styled from 'styled-components'
+
+const Header = styled.div`
+  display:flex;
+  background-color:black;
+  justify-content:space-around;
+  align-items:center;
+  position:relative;
+  padding:10px 0px;
+
+  .imageBackground{
+    opacity:0.5;
+    z-index:0;
+    //position:absolute;
+    //width:0;
+  }
+
+  .logoAndButton{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    z-index:1;
+  }
+`;
+
+const Button = styled.div`
+  color: #D4145A;
+  padding:20px 50px;
+  border-radius: 50px;
+  text-align:center;
+  width:fit-content;
+  background-color:white;
+  z-index:2;
+  cursor: pointer;
+`
+
+const CopyOne = styled.div`
+color:#fffdfd;
+background-color:black;
+text-align:center;
+display:flex;
+flex-direction:column;
+gap:30px;
+padding:10px;
+
+h1{
+  margin:0;
+  font-weight:500;
+}
+p{
+  margin:0;
+}
+
+.divButton{
+display:flex;
+justify-content:center;
+}
+`
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Aulão</title>
+        <link rel="icon" href="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_32,h_32/https://juniorvolcan.com/wp-content/uploads/2020/03/cropped-castl-01-32x32.png" sizes="32x32" />
+        <link rel="icon" href="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_192,h_192/https://juniorvolcan.com/wp-content/uploads/2020/03/cropped-castl-01-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_180,h_180/https://juniorvolcan.com/wp-content/uploads/2020/03/cropped-castl-01-180x180.png" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main>
+        <Header>
+          <Image className="imageBackground" src="https://lh3.googleusercontent.com/L5gOj17DU8NciWvhXkrTr3n5EbTWcoVaMveZM7JttiFriBtpCY97jSPRA7HsuN18mB0k34QaUZAKa7F5i2gp=w1294-h669" layout={'fill'} />
+          <div className="logoCourse">
+            <Image src="https://lh3.googleusercontent.com/nNkBmDaim29Ddc_ysElzbQ7_152wQyuKb82oDp4XnfszbR9EVI7E1qcKAHech_nOclKWRiGqAWDXmaqZczp2=w1294-h669" height={470} width={470} />
+          </div>
+          <div className="logoAndButton">
+            <Image src="https://lh6.googleusercontent.com/tYWazeZZTB8NOF4FqG5utiJ-N8TMsTHi5gRuAlldZZVSM7pLc4fs75-IeAMukOrBH22AYlcx_yXDqjRsUD9N=w1294-h669" height={70} width={300} />
+            <div>
+              <Link href="https://juniorvolcan.com/courses/?add-to-cart=1116">
+                <a href="https://juniorvolcan.com/courses/?add-to-cart=1116">
+                  <Button >
+                    Adquira já
+                  </Button>
+                </a>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+              </Link>
+            </div>
+          </div>
+        </Header>
+        <CopyOne>
+          <h1>
+            UM GUIA PARA ORDENAR SUA ROTINA ATRAVÉS DA SABEDORIA DOS SANTOS
+          </h1>
+          <h2>
+            Aprenda na prática como conciliar oração, estudo e trabalho.
+          </h2>
+          <p>
+            Você não consegue perseverar e progredir na vida de oração, na vida de estudos e na santificação do trabalho? Provavelmente é porque (até hoje) ninguém te mostrou os meios efetivos de unir estes três pilares fundamentais.
+          </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <div className="divButton">
+            <Link href="">
+              <Button >
+                Adquira já
+            </Button>
+            </Link>
+          </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <p>
+            Todos nós passamos pelas mesmas dificuldades: inconstância na oração, tropeços constantes nos estudos e estagnações no dia-a-dia de trabalho. Porém, até quando iremos nos conformar com o que sabemos? De que modo posso resgatar os grandes ensinamentos dos santos? Como faço para dar passos concretos rumo ao crescimento nesses pilares essenciais? Foi pensando exatamente nisso que montei este aulão.
+          </p>
+        </CopyOne>
+        {/* <div className={styles.title}>
+          <h1 className={styles.title}>
+            Junior Volcan
+          </h1>
+        </div> */}
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+      <footer>
+
       </footer>
     </div>
   )
