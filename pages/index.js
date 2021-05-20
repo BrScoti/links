@@ -10,6 +10,7 @@ const Header = styled.div`
   align-items:center;
   position:relative;
   padding:10px 0px;
+  flex-wrap: wrap;
 
   .imageBackground{
     opacity:0.5;
@@ -44,23 +45,63 @@ const CopyOne = styled.div`
 color:#fffdfd;
 background-color:black;
 text-align:center;
-display:flex;
+display: flex;
+align-items: center;
 flex-direction:column;
-gap:30px;
-padding:10px;
+
+.wrapper{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  padding:10px;
+  width: 70vw;
+}
 
 h1{
   margin:0;
   font-weight:500;
+  font-size: 29px;
 }
+h2{
+  font-size: 20px;
+}
+
 p{
   margin:0;
+  font-size: 17px;
 }
 
 .divButton{
 display:flex;
 justify-content:center;
 }
+
+.contentCourse{
+  margin-top: 20px;
+  h1{
+    color: #d4145a;
+  }
+
+  .imgMobile{
+    display: none;
+  }
+
+}
+
+@media(max-width: 440px) {
+  p{
+    text-align: justify;
+  }
+  .wrapper{
+    width: 90vw;
+  }
+    .contentCourse .imgMobile{
+      display: block;
+    }
+    .contentCourse .imgWeb{
+      display: none;
+    }
+  }
 `
 
 export default function Home() {
@@ -94,27 +135,37 @@ export default function Home() {
           </div>
         </Header>
         <CopyOne>
-          <h1>
-            UM GUIA PARA ORDENAR SUA ROTINA ATRAVÉS DA SABEDORIA DOS SANTOS
-          </h1>
-          <h2>
-            Aprenda na prática como conciliar oração, estudo e trabalho.
-          </h2>
-          <p>
-            Você não consegue perseverar e progredir na vida de oração, na vida de estudos e na santificação do trabalho? Provavelmente é porque (até hoje) ninguém te mostrou os meios efetivos de unir estes três pilares fundamentais.
-          </p>
+          <div className="wrapper">
+            <h1>
+              UM GUIA PARA ORDENAR SUA ROTINA ATRAVÉS DA SABEDORIA DOS SANTOS
+            </h1>
+            <h2>
+              Aprenda na prática como conciliar oração, estudo e trabalho.
+            </h2>
+            <p>
+              Você não consegue perseverar e progredir na vida de oração, na vida de estudos e na santificação do trabalho? Provavelmente é porque (até hoje) ninguém te mostrou os meios efetivos de unir estes três pilares fundamentais.
+            </p>
 
-          <div className="divButton">
-            <Link href="">
-              <Button >
-                Adquira já
-            </Button>
-            </Link>
+            <div className="divButton">
+              <Link href="">
+                <Button >
+                  Adquira já
+              </Button>
+              </Link>
+            </div>
+
+            <p>
+              Todos nós passamos pelas mesmas dificuldades: inconstância na oração, tropeços constantes nos estudos e estagnações no dia-a-dia de trabalho. Porém, até quando iremos nos conformar com o que sabemos? De que modo posso resgatar os grandes ensinamentos dos santos? Como faço para dar passos concretos rumo ao crescimento nesses pilares essenciais? Foi pensando exatamente nisso que montei este aulão.
+            </p>
           </div>
 
-          <p>
-            Todos nós passamos pelas mesmas dificuldades: inconstância na oração, tropeços constantes nos estudos e estagnações no dia-a-dia de trabalho. Porém, até quando iremos nos conformar com o que sabemos? De que modo posso resgatar os grandes ensinamentos dos santos? Como faço para dar passos concretos rumo ao crescimento nesses pilares essenciais? Foi pensando exatamente nisso que montei este aulão.
-          </p>
+          <div className="contentCourse">
+            <h1>Você terá acesso a:</h1>
+            <div className="imgWeb"><Image src="/images/conteudo_aulao_web.png" height={700} width={1200} /></div>
+            <div className="imgMobile"><Image src="/images/conteudo_aulao_mobile.png" height={730} width={430} /></div>
+
+
+          </div>
         </CopyOne>
         {/* <div className={styles.title}>
           <h1 className={styles.title}>
