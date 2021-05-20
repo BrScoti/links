@@ -14,6 +14,7 @@ const Header = styled.div`
   .imageBackground{
     opacity:0.5;
     z-index:0;
+    object-fit: cover;
     //position:absolute;
     //width:0;
   }
@@ -74,12 +75,12 @@ export default function Home() {
 
       <main>
         <Header>
-          <Image className="imageBackground" src="https://lh3.googleusercontent.com/L5gOj17DU8NciWvhXkrTr3n5EbTWcoVaMveZM7JttiFriBtpCY97jSPRA7HsuN18mB0k34QaUZAKa7F5i2gp=w1294-h669" layout={'fill'} />
+          <Image className="imageBackground" src="/images/background.jpg" layout={'fill'} />
           <div className="logoCourse">
-            <Image src="https://lh3.googleusercontent.com/nNkBmDaim29Ddc_ysElzbQ7_152wQyuKb82oDp4XnfszbR9EVI7E1qcKAHech_nOclKWRiGqAWDXmaqZczp2=w1294-h669" height={470} width={470} />
+            <Image src="/images/tittle-01.png" height={470} width={470} />
           </div>
           <div className="logoAndButton">
-            <Image src="https://lh6.googleusercontent.com/tYWazeZZTB8NOF4FqG5utiJ-N8TMsTHi5gRuAlldZZVSM7pLc4fs75-IeAMukOrBH22AYlcx_yXDqjRsUD9N=w1294-h669" height={70} width={300} />
+            <Image src="/images/logo_junin.png" height={70} width={300} />
             <div>
               <Link href="https://juniorvolcan.com/courses/?add-to-cart=1116">
                 <a href="https://juniorvolcan.com/courses/?add-to-cart=1116">
