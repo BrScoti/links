@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { IconElement } from '../components/icon_element'
+import { IconBox } from '../components/icon_element/styles'
+
 
 const Header = styled.div`
   display:flex;
@@ -104,6 +107,21 @@ justify-content:center;
   }
 `
 
+const RowIcons = styled.div`
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+justify-content: center;
+  ${IconBox}{
+    flex:1;
+  }
+
+  @media (max-width:445px){
+    flex-direction: column;
+    padding: 0px 10px;
+  }
+`
+
 export default function Home() {
   return (
     <div>
@@ -161,11 +179,24 @@ export default function Home() {
 
           <div className="contentCourse">
             <h1>Você terá acesso a:</h1>
-            <div className="imgWeb"><Image src="/images/conteudo_aulao_web.png" height={700} width={1200} /></div>
+            <div className="imgWeb"><Image src="/images/conteudo_aulao_web.png" height={400} width={700} /></div>
             <div className="imgMobile"><Image src="/images/conteudo_aulao_mobile.png" height={730} width={430} /></div>
 
 
           </div>
+          <IconElement icon="open-book" title="Aulão" description="3h de aula" />
+          <h1>
+            + QUATRO BÔNUS
+          </h1>
+          <RowIcons>
+            <IconElement icon="open-book" title="Minicurso sobre a vida de estudos" description="Sete aúdios" />
+            <IconElement icon="open-book" title='SÉRIE DE VÍDEOS " VIDA DOS SANTOS"' description="Sete aulas exclusivas de biografias que impactarão sua vida" />
+          </RowIcons>
+
+          <RowIcons>
+            <IconElement icon="open-book" title="PDF EXCLUSIVO" description="Resumo do Aulão" />
+            <IconElement icon="open-book" title='PLANNER DE ESTUDOS' description="Sete aulas exclusivas de biografias que impactarão sua vida" />
+          </RowIcons>
         </CopyOne>
         {/* <div className={styles.title}>
           <h1 className={styles.title}>
