@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { IconElement } from '../components/icon_element'
 import { IconBox } from '../components/icon_element/styles'
-
-
+import { Container } from '../components/container/'
+import { Price } from '../components/price'
 const Header = styled.div`
   display:flex;
   background-color:black;
@@ -52,13 +52,13 @@ display: flex;
 align-items: center;
 flex-direction:column;
 
-.wrapper{
+/* .wrapper{
   display:flex;
   flex-direction:column;
   gap:30px;
   padding:10px;
   width: 70vw;
-}
+} */
 
 h1{
   margin:0;
@@ -107,7 +107,7 @@ justify-content:center;
   }
 `
 
-const RowIcons = styled.div`
+const RowIcons = styled(Container)`
 display: flex;
 width: 100%;
 flex-wrap: wrap;
@@ -153,7 +153,7 @@ export default function Home() {
           </div>
         </Header>
         <CopyOne>
-          <div className="wrapper">
+          <Container>
             <h1>
               UM GUIA PARA ORDENAR SUA ROTINA ATRAVÉS DA SABEDORIA DOS SANTOS
             </h1>
@@ -175,7 +175,7 @@ export default function Home() {
             <p>
               Todos nós passamos pelas mesmas dificuldades: inconstância na oração, tropeços constantes nos estudos e estagnações no dia-a-dia de trabalho. Porém, até quando iremos nos conformar com o que sabemos? De que modo posso resgatar os grandes ensinamentos dos santos? Como faço para dar passos concretos rumo ao crescimento nesses pilares essenciais? Foi pensando exatamente nisso que montei este aulão.
             </p>
-          </div>
+          </Container>
 
           <div className="contentCourse">
             <h1>Você terá acesso a:</h1>
@@ -198,6 +198,7 @@ export default function Home() {
             <IconElement icon="open-book" title='PLANNER DE ESTUDOS' description="Sete aulas exclusivas de biografias que impactarão sua vida" />
           </RowIcons>
         </CopyOne>
+        <Price />
         {/* <div className={styles.title}>
           <h1 className={styles.title}>
             Junior Volcan
